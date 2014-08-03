@@ -13,12 +13,12 @@ var languages = {
 
 module.exports = function (text, lang, callback){
 
-	var id = uuid.v4();
+	var id = uuid.v4()
 
-	var file_path = path.join(config.output_dir, id);
+	var file_path = path.join(config.output_dir, id)
 
-	var input_path = file_path + '.txt';
-	var output_path = file_path + '.wav';
+	var input_path = file_path + '.txt'
+	var output_path = file_path + '.wav'
 
 	var ws = fs.createWriteStream(input_path);
 	
@@ -35,9 +35,9 @@ module.exports = function (text, lang, callback){
 		}), function (err, stdout){
 
 			if(err){
-				callback(new Error({err: err, output: stdout}));
+				callback(new Error({err: err, output: stdout}))
 			} else {
-				callback(null, fs.createReadStream(output));
+				callback(null, fs.createReadStream(output))
 			}
 		});
 
@@ -48,21 +48,21 @@ module.exports = function (text, lang, callback){
 
 String.prototype.format = function() {
 
-	var formatted = this;
+	var formatted = this
 
     if(typeof arguments[0] == 'object'){
-    	var object = arguments[0];
+    	var object = arguments[0]
     	for (key in object){
-    		var regexp = new RegExp('\\{'+key+'\\}', 'gi');
-	        formatted = formatted.replace(regexp, object[key]);
+    		var regexp = new RegExp('\\{'+key+'\\}', 'gi')
+	        formatted = formatted.replace(regexp, object[key])
     	}
     } else{
 	    for (var i = 0; i < arguments.length; i++) {
-	        var regexp = new RegExp('\\{'+i+'\\}', 'gi');
-	        formatted = formatted.replace(regexp, arguments[i]);
+	        var regexp = new RegExp('\\{'+i+'\\}', 'gi')
+	        formatted = formatted.replace(regexp, arguments[i])
 	    }
     }
 
-    return formatted;
+    return formatted
 
 };
