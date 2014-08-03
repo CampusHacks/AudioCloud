@@ -1,0 +1,6 @@
+{
+	"server": {
+		"port": 80
+	},
+	"output_dir": "/audiocloud/output"
+}
