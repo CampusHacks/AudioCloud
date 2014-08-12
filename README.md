@@ -1,4 +1,4 @@
 AudioCloud
 ==========
 
-AudioCloud. Text to TTS
+AudioCloud. TTS Cloud
